@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using AspNet5WithFullFramework.Models;
+﻿using AspNet5WithFullFramework.Models;
 using FluentNHibernate.Mapping;
 
 namespace AspNet5WithFullFramework.Db.Maps
 {
-    public interface IMap
-    {
-    }
-
     public class TaskMap
         : ClassMap<Task>, IMap
     {
@@ -17,7 +10,7 @@ namespace AspNet5WithFullFramework.Db.Maps
         {
             Table("Tasks");
             Id(x => x.Id).GeneratedBy.Identity();
-            Map(x => x.Name).Not.Nullable();
+            Map(x => x.Name).Length(1000).Not.Nullable();
         }
     }
 }

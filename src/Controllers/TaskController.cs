@@ -17,10 +17,10 @@ namespace AspNet5WithFullFramework.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
-            var tasks = _session.QueryOver<Task>().List();
-            return new ObjectResult(tasks);
+            var task = _session.QueryOver<Task>().Take(1).SingleOrDefault();
+            return new ObjectResult(task);
         }
 
         [HttpPost]
