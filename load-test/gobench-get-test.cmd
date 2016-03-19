@@ -1,0 +1,1 @@
+gobench.exe -u http://localhost:5000/task/getall -k=true -c 100 -r 200 
